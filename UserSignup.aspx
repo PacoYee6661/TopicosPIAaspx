@@ -61,9 +61,17 @@
 
                         </div>
 
+                        <div class="row">
+                            <div class="col">
+                                <center>
+                               <br />
+                                    <span class="badge bg-primary">Credenciales de usuario</span>
+                                </center>
+                            </div>
+                        </div>
+
+
                          <div class="row">
-
-
                             <div class="col-md-6">
                                   <label>Usuario</label>
                                 <div class="form-group">
@@ -71,37 +79,17 @@
                                 </div>
                             </div>
                              <div class="col-md-6">
-                                 <label>Fecha de nacimiento</label>
-                                <div class="form-group">
-                                    <asp:TextBox class="form-control" ID="TextBox8" runat="server" placeholder="fecha de nacimiento" TextMode="Date"></asp:TextBox>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <label>Usuario</label>
-                                <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="MemberID"></asp:TextBox>
-                                </div>
                                  <label>Contraseña</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                                    <asp:TextBox class="form-control" ID="TextBox8" runat="server" placeholder="Contraseña"></asp:TextBox>
                                 </div>
-                                <div class="form-group">
-                                    <center>
-                                    <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Entrar" />
-                                    </center>
-                                </div>
-                                 <div class="form-group">
+                            </div>
+                              <div class="form-group">
                                      <center>
-
+                                         <br />
                                      <a href="UserSignup.aspx"><input class="btn btn-info btn-block btn-lg" id="Button2" type="button" value="Registrarse" /></a>
                                      </center>
                                 </div>
-                            </div>
                         </div>
                         <div class="row">
                             <div class="col">
