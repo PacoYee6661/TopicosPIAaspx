@@ -13,5 +13,10 @@ namespace PIATOPICOSTALVEZFINAL
         {
 
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

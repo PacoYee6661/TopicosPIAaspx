@@ -37,7 +37,7 @@
                   
                   <div class="row">
                      <div class="col-6">
-                        <asp:Button ID="Button2" class="btn btn-lg btn-block btn-primary" runat="server" Text="Buscar" />
+                        <asp:Button ID="Button2" class="btn btn-lg btn-block btn-primary" runat="server" Text="Buscar" OnClick="Button2_Click" />
                      </div>
                   </div>
                </div>

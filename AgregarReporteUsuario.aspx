@@ -22,9 +22,13 @@
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox3" TextMode="Multiline" Rows="3" runat="server" placeholder="Detalles" Width="362px"></asp:TextBox>
                                 </div>
+                                <label>Usuario</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Ingrese su usuario" Width="362px"></asp:TextBox>
+                                </div>
                                 <div class="form-group">
                                     <br>
-                                    <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Guardar" />
+                                    <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Guardar" OnClick="Button1_Click" />
                                 </div>     
                             </div>
                         </div>                  

@@ -87,7 +87,7 @@
                               <div class="form-group">
                                      <center>
                                          <br />
-                                     <a href="UserSignup.aspx"><input class="btn btn-info btn-block btn-lg" id="Button2" type="button" value="Registrarse" /></a>
+                                          <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Registrarse" OnClick="Button1_Click" />
                                      </center>
                                 </div>
                         </div>
