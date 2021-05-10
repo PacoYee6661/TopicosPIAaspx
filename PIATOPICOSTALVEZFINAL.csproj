@@ -1887,6 +1887,7 @@
     <Content Include="fontawesome\webfonts\fa-solid-900.woff2" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
+    <None Include="Properties\PublishProfiles\PizzaDeprizza - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

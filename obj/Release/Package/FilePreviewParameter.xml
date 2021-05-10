@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="pizzadeprizza5" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Paco\ Yee\\source\\repos\\PIATOPICOSTALVEZFINAL\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Paco\ Yee\\source\\repos\\PIATOPICOSTALVEZFINAL\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="con-Web.config Connection String" description="con Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." value="data source= den1.mssql8.gear.host ;user id=pizzeria21;password=Wk3V_7_570X6" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Paco\ Yee\\source\\repos\\PIATOPICOSTALVEZFINAL\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='con']/@connectionString" />
+  </parameter>
+</parameters>
