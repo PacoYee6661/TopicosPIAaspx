@@ -28,7 +28,7 @@ namespace PIATOPICOSTALVEZFINAL
                     LinkButton2.Visible = false; //signup link button
                     LinkButton6.Visible = true; //admin login link button
                     LinkButton3.Visible = true; //logout link button
-                    LinkButton7.Text = "Hola "+Session["username"].ToString(); //message for the user link button
+                    LinkButton7.Visible = true; //message for the user link button
                     LinkButton4.Visible = false; //resolve problems by admin button
                 }
                 else if (Session["role"].Equals("admin"))
@@ -83,6 +83,12 @@ namespace PIATOPICOSTALVEZFINAL
             LinkButton3.Visible = false; //logout link button
             LinkButton7.Visible = false; //message for the user link button
             LinkButton4.Visible = false; //resolve problems by admin button
+            Response.Redirect("homepage.aspx");
+        }
+
+        protected void LinkButton7_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("UserDetails.aspx");
         }
     }
 }

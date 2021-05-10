@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="PIATOPICOSTALVEZFINAL.AdminPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+       $(document).ready(function () {
+           $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+       });
+   </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
@@ -54,9 +59,9 @@
                         <label>Estado</label>
                         <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList2" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
-                              <asp:ListItem Text="Resuelto" Value=1 />
-                              <asp:ListItem Text="En proceso" Value=2 />
-                              <asp:ListItem Text="En revision adicional" Value=2 />
+                              <asp:ListItem Text="En proceso" Value=1 />
+                              <asp:ListItem Text="Completado" Value=2 />
+                              <asp:ListItem Text="En revision" Value=3 />
                            </asp:DropDownList>
                         </div>
                      </div>
@@ -99,7 +104,7 @@
                   </div>
                   <div class="row">
                      <div class="col">
-                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
+                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" OnRowDataBound="GridView1_RowDataBound"></asp:GridView>
                      </div>
                   </div>
                </div>

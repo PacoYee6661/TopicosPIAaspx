@@ -43,9 +43,6 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="AgregarReporteUsuario.aspx">Levantar reporte</a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="ConsultarReporteUsuario.aspx">Consultar reporte</a>
-                        </li>
                     </ul>
                         <%--paginas estaticas--%>
 
@@ -63,7 +60,7 @@
                         </li>
 
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server" Visible="False">Hello user</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server" Visible="False" OnClick="LinkButton7_Click">Usuario y Reportes</asp:LinkButton>
 
                         </li>
                     </ul>

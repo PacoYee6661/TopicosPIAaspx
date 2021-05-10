@@ -1742,6 +1742,7 @@
     <Content Include="imgs\noun_admin_95188.png" />
     <Content Include="imgs\noun_pages_2041111.png" />
     <Content Include="imgs\noun_profile search_2139550.png" />
+    <Content Include="imgs\noun_report_3907422.png" />
     <Content Include="imgs\pizza.png" />
     <Content Include="imgs\publisher.png" />
     <Content Include="imgs\search-online.png" />
@@ -1749,9 +1750,12 @@
     <Content Include="imgs\workinprogress.png" />
     <Content Include="imgs\writer.png" />
     <Content Include="PaginaUsuario.aspx" />
+    <Content Include="UserDetails.aspx" />
     <Content Include="UserLogin.aspx" />
     <Content Include="UserSignup.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminLogin.aspx.cs">
@@ -1803,6 +1807,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserDetails.aspx.cs">
+      <DependentUpon>UserDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserDetails.aspx.designer.cs">
+      <DependentUpon>UserDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserLogin.aspx.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>

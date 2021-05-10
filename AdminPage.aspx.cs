@@ -15,7 +15,23 @@ namespace PIATOPICOSTALVEZFINAL
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                if (Session["username"].ToString() == "" || Session["username"] == null)
+                {
 
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Favor de iniciar sesion para levantar un reporte');</script>");
+                Response.Redirect("homepage.aspx");
+            }
+            getReportData();
         }
 
         //update button
@@ -24,11 +40,10 @@ namespace PIATOPICOSTALVEZFINAL
             if (checkIfReportExists())
             {
                 updateReport();
-
             }
             else
             {
-                Response.Write("<script>alert('Author does not exist');</script>");
+                Response.Write("<script>alert('Reporte no existe');</script>");
             }
         }
         //delete button
@@ -58,7 +73,7 @@ namespace PIATOPICOSTALVEZFINAL
                 }
                 else
                 {
-                    Response.Write("<script>alert('Invalid Author ID');</script>");
+                    Response.Write("<script>alert('ID no valido');</script>");
                 }
 
 
@@ -104,7 +119,7 @@ namespace PIATOPICOSTALVEZFINAL
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("UPDATE TICKET SET solucion=@solucion, status=@estado ='" + TextBox1.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("UPDATE TICKET SET solucion=@solucion, status=@estado WHERE idTicket='" + TextBox1.Text.Trim() + "'", con);
 
                 cmd.Parameters.AddWithValue("@solucion", TextBox9.Text.Trim());
                 cmd.Parameters.AddWithValue("@estado", DropDownList2.SelectedValue);
@@ -170,6 +185,37 @@ namespace PIATOPICOSTALVEZFINAL
         protected void Button1_Click(object sender, EventArgs e)
         {
             getReportByID();
+        }
+
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+        }
+        void getReportData()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand("SELECT T.idTicket,T.detalles,T.Solucion,S.descripcion as Estado, T.usuario from TICKET T, STATUSCHECK S;", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                GridView1.DataSource = dt;
+                GridView1.DataBind();
+
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+            }
         }
     }
 }

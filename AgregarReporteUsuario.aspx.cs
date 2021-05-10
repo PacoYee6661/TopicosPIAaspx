@@ -15,7 +15,22 @@ namespace PIATOPICOSTALVEZFINAL
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                if (Session["username"].ToString()=="" || Session["username"]==null)
+                {
 
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Favor de iniciar sesion para levantar un reporte');</script>");
+                Response.Redirect("homepage.aspx");
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
