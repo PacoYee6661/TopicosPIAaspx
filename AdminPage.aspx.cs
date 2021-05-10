@@ -15,6 +15,7 @@ namespace PIATOPICOSTALVEZFINAL
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            getReportData();
             try
             {
                 if (Session["username"].ToString() == "" || Session["username"] == null)
@@ -23,7 +24,7 @@ namespace PIATOPICOSTALVEZFINAL
                 }
                 else
                 {
-
+                    getReportData();
                 }
             }
             catch (Exception ex)
@@ -31,9 +32,8 @@ namespace PIATOPICOSTALVEZFINAL
                 Response.Write("<script>alert('Favor de iniciar sesion para levantar un reporte');</script>");
                 Response.Redirect("homepage.aspx");
             }
-            getReportData();
-        }
 
+        }
         //update button
         protected void Button3_Click(object sender, EventArgs e)
         {
@@ -201,15 +201,12 @@ namespace PIATOPICOSTALVEZFINAL
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("SELECT T.idTicket,T.detalles,T.Solucion,S.descripcion as Estado, T.usuario from TICKET T, STATUSCHECK S;", con);
+                SqlCommand cmd = new SqlCommand("SELECT T.idTicket,T.detalles,T.Solucion,S.descripcion as Estado, T.usuario from TICKET T, STATUSCHECK S WHERE T.status=S.status", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
-
-
             }
             catch (Exception ex)
             {

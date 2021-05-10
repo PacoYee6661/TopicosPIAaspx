@@ -50,8 +50,7 @@ namespace PIATOPICOSTALVEZFINAL
                 SqlCommand cmd = new SqlCommand("INSERT INTO TICKET values (@detalles,'','1',@usuario)", con);
 
                 cmd.Parameters.AddWithValue("@detalles", TextBox3.Text.Trim());
-                cmd.Parameters.AddWithValue("@usuario", TextBox1.Text.Trim());
-
+                cmd.Parameters.AddWithValue("@usuario", Session["username"].ToString().Trim());
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script>alert('Reporte generado correctamente, favor de ir a su pagina de usuario para ver los reportes generados y poder consultar su estado');</script>");
@@ -65,7 +64,6 @@ namespace PIATOPICOSTALVEZFINAL
         }
         void clearForm()
         {
-            TextBox1.Text = "";
             TextBox3.Text = "";
         }
     }
